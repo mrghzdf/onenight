@@ -242,7 +242,10 @@ export function SettingsScreen({
               return (
                 <Pressable
                   key={track.key}
-                  style={[styles.trackButton, isActive ? styles.trackButtonActive : null]}
+                  style={[
+                    styles.trackButton,
+                    isActive ? styles.trackButtonActive : null,
+                  ]}
                   onPress={() => {
                     setSelectedTrackKey(track.key)
                     void (async () => {
@@ -312,7 +315,9 @@ export function SettingsScreen({
           <View style={styles.counterRow}>
             <Pressable
               style={styles.counterBtn}
-              onPress={() => setNarrationDucking(settings.narrationDucking - 0.05)}
+              onPress={() =>
+                setNarrationDucking(settings.narrationDucking - 0.05)
+              }
             >
               <Text style={styles.counterText}>-</Text>
             </Pressable>
@@ -321,12 +326,17 @@ export function SettingsScreen({
             </Text>
             <Pressable
               style={styles.counterBtn}
-              onPress={() => setNarrationDucking(settings.narrationDucking + 0.05)}
+              onPress={() =>
+                setNarrationDucking(settings.narrationDucking + 0.05)
+              }
             >
               <Text style={styles.counterText}>+</Text>
             </Pressable>
           </View>
-          <Pressable style={styles.trackTestButton} onPress={toggleAmbiencePreview}>
+          <Pressable
+            style={styles.trackTestButton}
+            onPress={toggleAmbiencePreview}
+          >
             <Text style={styles.trackTestButtonText}>
               {isTestingAmbience ? "Parar trilha" : "Testar trilha"}
             </Text>
@@ -344,7 +354,10 @@ export function SettingsScreen({
               return (
                 <Pressable
                   key={bg.key}
-                  style={[styles.trackButton, isActive ? styles.trackButtonActive : null]}
+                  style={[
+                    styles.trackButton,
+                    isActive ? styles.trackButtonActive : null,
+                  ]}
                   onPress={() =>
                     setSettings((prev) => ({
                       ...prev,
@@ -368,8 +381,12 @@ export function SettingsScreen({
 
         <View style={styles.card}>
           <Text style={styles.cardLabel}>Sobre</Text>
-          <Text style={styles.aboutText}>One Night Ultimate Werewolf - PT-BR</Text>
-          <Text style={styles.aboutSubtext}>Desenvolvido por Djalma Rodrigues</Text>
+          <Text style={styles.aboutText}>
+            One Night Ultimate Werewolf - PT-BR
+          </Text>
+          <Text style={styles.aboutSubtext}>
+            Desenvolvido por Djalma A. Rodrigues
+          </Text>
           <Text style={styles.aboutSubtext}>Versão {appVersion}</Text>
         </View>
 

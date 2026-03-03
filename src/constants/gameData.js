@@ -129,15 +129,18 @@ export const ROLE_TEAM_SHORT = {
 }
 
 export const ROLE_CALL_NAMES = {
-  doppelganger: "Doppelganger, Sósia",
+  doppelganger: "Doppelganger",
   werewolf: "Lobisomens",
   minion: "Minion",
   mason: "Masons",
-  seer: "Seer, Vidente",
-  robber: "Robber, Ladrão",
-  troublemaker: "Troublemaker, Encrenqueiro",
-  drunk: "Drunk, Bêbado",
+  seer: "Seer",
+  robber: "Robber",
+  troublemaker: "Troublemaker",
+  drunk: "Drunk",
   insomniac: "Insomniac",
+  villager: "Villager",
+  hunter: "Hunter",
+  tanner: "Tanner",
 }
 
 export const ROLE_LINES = {
@@ -150,4 +153,62 @@ export const ROLE_LINES = {
   troublemaker: `${ROLE_CALL_NAMES.troublemaker}, acorde. Você pode trocar as cartas de dois outros jogadores.`,
   drunk: `${ROLE_CALL_NAMES.drunk}, acorde e troque sua carta por uma carta do centro, sem olhar.`,
   insomniac: `${ROLE_CALL_NAMES.insomniac}, acorde e olhe sua carta para ver se ela mudou.`,
+}
+
+export const ROLE_MANUAL_DETAILS = {
+  doppelganger: {
+    role: "Time: Vilarejo (ou novo time do papel copiado)",
+    action:
+      "Acorda primeiro, olha a carta de outro jogador e vira aquele papel. Se o novo papel tiver acao noturna, executa imediatamente.",
+  },
+  werewolf: {
+    role: "Time: Lobisomens",
+    action:
+      "Acorda com outros Lobisomens para se reconhecer. Se estiver sozinho, pode olhar uma carta do centro.",
+  },
+  minion: {
+    role: "Time: Lobisomens",
+    action:
+      "Acorda e descobre quem sao os Lobisomens. Os Lobisomens nao sabem quem e o Minion.",
+  },
+  mason: {
+    role: "Time: Vilarejo",
+    action: "Acorda com outros Masons e se reconhecem.",
+  },
+  seer: {
+    role: "Time: Vilarejo",
+    action:
+      "Acorda e escolhe: olhar a carta de 1 jogador ou olhar 2 cartas do centro.",
+  },
+  robber: {
+    role: "Time: Vilarejo",
+    action:
+      "Acorda, troca sua carta com a de outro jogador e olha a nova carta recebida.",
+  },
+  troublemaker: {
+    role: "Time: Vilarejo",
+    action: "Acorda e troca as cartas de dois outros jogadores, sem olhar.",
+  },
+  drunk: {
+    role: "Time: Vilarejo",
+    action: "Acorda e troca sua carta com uma carta do centro, sem olhar.",
+  },
+  insomniac: {
+    role: "Time: Vilarejo",
+    action: "Acorda no fim da noite e olha sua propria carta.",
+  },
+  villager: {
+    role: "Time: Vilarejo",
+    action: "Nao acorda a noite. Ajuda o vilarejo pela discussao e voto.",
+  },
+  hunter: {
+    role: "Time: Vilarejo",
+    action:
+      "Nao acorda a noite. Se morrer na votacao final, a pessoa em quem votou tambem morre.",
+  },
+  tanner: {
+    role: "Time: Solo",
+    action:
+      "Nao acorda a noite. Seu objetivo e morrer na votacao final para vencer.",
+  },
 }
