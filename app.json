@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "One Night PT-BR",
+    "slug": "one-night-ptbr",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "newArchEnabled": true,
+    "userInterfaceStyle": "dark",
+    "icon": "./assets/images/thumbmail_jogo.png",
+    "splash": {
+      "image": "./assets/images/lobisom_transparente.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#f6e35a"
+    },
+    "android": {
+      "splash": {
+        "image": "./assets/images/lobisom_transparente.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#f6e35a"
+      },
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-foreground.png",
+        "backgroundColor": "#0f2a37"
+      },
+      "package": "com.anonymous.onenightptbr"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "plugins": [
+      "expo-asset",
+      "expo-localization",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Butcherman-Regular.ttf"
+          ]
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#f6e35a",
+          "image": "./assets/images/lobisom_transparente.png",
+          "imageWidth": 170,
+          "resizeMode": "contain"
+        }
+      ]
+    ]
+  }
+}
