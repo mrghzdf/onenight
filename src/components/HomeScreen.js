@@ -3,9 +3,7 @@ import {
   FlatList,
   Image,
   ImageBackground,
-  Modal,
   Pressable,
-  ScrollView,
   Text,
   View,
 } from "react-native"
@@ -14,9 +12,7 @@ import { StatusBar } from "expo-status-bar"
 import {
   APP_THUMB,
   ROLE_IMAGE_SOURCES,
-  ROLE_MANUAL_DETAILS,
   ROLE_MAX_COPIES,
-  ROLES,
   ROLE_SUBTITLES_PT,
   ROLE_TEAM_SHORT,
 } from "../constants/gameData"
@@ -34,16 +30,6 @@ export function HomeScreen({
   toggleRole,
   setScreen,
 }) {
-  const [isGuideOpen, setIsGuideOpen] = React.useState(false)
-  const guideRoles = React.useMemo(
-    () =>
-      ROLES.map((role) => ({
-        ...role,
-        guide: ROLE_MANUAL_DETAILS[role.id],
-      })),
-    [],
-  )
-
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
@@ -66,7 +52,7 @@ export function HomeScreen({
           <Text style={styles.homeSubtitle}>Ultimate Werewolf PT-BR</Text>
           <Pressable
             style={styles.bookButton}
-            onPress={() => setIsGuideOpen(true)}
+            onPress={() => setScreen("guide")}
             accessibilityRole="button"
             accessibilityLabel="Abrir guia dos personagens"
           >
@@ -219,62 +205,6 @@ export function HomeScreen({
           </Text>
         </Pressable>
       </View>
-
-      <Modal
-        visible={isGuideOpen}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setIsGuideOpen(false)}
-      >
-        <View style={styles.guideBackdrop}>
-          <View style={styles.guideModal}>
-            <View style={styles.guideHeader}>
-              <Text style={styles.guideTitle}>Livro de Papeis</Text>
-              <Pressable
-                style={styles.guideCloseButton}
-                onPress={() => setIsGuideOpen(false)}
-                accessibilityRole="button"
-                accessibilityLabel="Fechar guia dos personagens"
-              >
-                <Text style={styles.guideCloseButtonText}>Fechar</Text>
-              </Pressable>
-            </View>
-            <ScrollView
-              style={styles.guideScroll}
-              contentContainerStyle={styles.guideScrollContent}
-            >
-              {guideRoles.map((role) => {
-                const guide = role.guide
-                if (!guide) {
-                  return null
-                }
-
-                return (
-                  <View key={role.id} style={styles.guideRoleCard}>
-                    <View style={styles.guideRoleHeader}>
-                      <Image
-                        source={ROLE_IMAGE_SOURCES[role.id]}
-                        style={styles.guideRoleImage}
-                        resizeMode="contain"
-                      />
-                      <View style={styles.guideRoleHeaderText}>
-                        <Text style={styles.guideRoleName}>{role.name}</Text>
-                        <Text style={styles.guideRoleSubtitle}>
-                          {ROLE_SUBTITLES_PT[role.id] ?? ""}
-                        </Text>
-                      </View>
-                    </View>
-                    <Text style={styles.guideLabel}>Funcao</Text>
-                    <Text style={styles.guideBodyText}>{guide.role}</Text>
-                    <Text style={styles.guideLabel}>Acao</Text>
-                    <Text style={styles.guideBodyText}>{guide.action}</Text>
-                  </View>
-                )
-              })}
-            </ScrollView>
-          </View>
-        </View>
-      </Modal>
     </SafeAreaView>
   )
 }

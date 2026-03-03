@@ -3,7 +3,7 @@ export const ROLES = [
   { id: "werewolf", name: "Werewolf", order: 2 },
   { id: "minion", name: "Minion", order: 3 },
   { id: "mason", name: "Mason", order: 4 },
-  { id: "seer", name: "Sser", order: 5 },
+  { id: "seer", name: "Seer", order: 5 },
   { id: "robber", name: "Robber", order: 6 },
   { id: "troublemaker", name: "Troublemaker", order: 7 },
   { id: "drunk", name: "Drunk", order: 8 },

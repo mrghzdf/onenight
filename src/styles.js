@@ -24,6 +24,9 @@ export const styles = StyleSheet.create({
   homeHeader: {
     alignItems: "center",
   },
+  playHeader: {
+    alignItems: "center",
+  },
   homeSubtitleRow: {
     marginTop: 2,
     flexDirection: "row",
@@ -325,51 +328,8 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "Butcherman-Regular",
   },
-  guideBackdrop: {
+  guideScreenScroll: {
     flex: 1,
-    backgroundColor: "rgba(2, 8, 14, 0.78)",
-    justifyContent: "center",
-    paddingHorizontal: 14,
-    paddingVertical: 20,
-  },
-  guideModal: {
-    maxHeight: "90%",
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: "rgba(215, 227, 238, 0.3)",
-    backgroundColor: "#0e2433",
-    overflow: "hidden",
-  },
-  guideHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    borderBottomWidth: 1,
-    borderBottomColor: "rgba(215, 227, 238, 0.2)",
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-  },
-  guideTitle: {
-    color: "#f6ef5d",
-    fontSize: 22,
-    fontFamily: "Butcherman-Regular",
-    letterSpacing: 0.3,
-  },
-  guideCloseButton: {
-    borderWidth: 1,
-    borderColor: "#dce7ef",
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    backgroundColor: "rgba(255,255,255,0.08)",
-  },
-  guideCloseButtonText: {
-    color: "#f7fbff",
-    fontSize: 13,
-    fontWeight: "700",
-  },
-  guideScroll: {
-    maxHeight: "100%",
   },
   guideScrollContent: {
     padding: 12,
@@ -418,6 +378,10 @@ export const styles = StyleSheet.create({
     color: "#e8f1f8",
     fontSize: 13,
     lineHeight: 18,
+  },
+  guideBackButton: {
+    marginTop: 8,
+    marginBottom: 14,
   },
   card: {
     borderWidth: 1,

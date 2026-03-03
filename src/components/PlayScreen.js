@@ -38,7 +38,7 @@ export function PlayScreen({
         resizeMode="cover"
       />
       <View style={styles.backgroundOverlay} />
-      <View style={styles.header}>
+      <View style={[styles.header, styles.playHeader]}>
         <Text style={styles.title}>ONE NIGHT</Text>
         <Text style={styles.subtitle}>{currentStep?.title ?? "Narração"}</Text>
       </View>

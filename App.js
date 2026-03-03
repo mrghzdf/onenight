@@ -3,6 +3,7 @@ import * as Speech from "expo-speech"
 import { useFonts } from "expo-font"
 import { AUDIO_TRACKS } from "./src/audioTracks"
 import { HomeScreen } from "./src/components/HomeScreen"
+import { GuideScreen } from "./src/components/GuideScreen"
 import { PlayScreen } from "./src/components/PlayScreen"
 import { SettingsScreen } from "./src/components/SettingsScreen"
 import { useAudioControls } from "./src/hooks/useAudioControls"
@@ -269,6 +270,15 @@ export default function App() {
           Speech.stop()
           setScreen("home")
         }}
+      />
+    )
+  }
+
+  if (screen === "guide") {
+    return (
+      <GuideScreen
+        selectedBackground={selectedBackground}
+        setScreen={setScreen}
       />
     )
   }
