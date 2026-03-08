@@ -2,6 +2,7 @@
   "name": "onenight-ptbr",
   "version": "2.1.3",
   "private": true,
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "gen:tracks": "node scripts/generate-audio-tracks.js",
